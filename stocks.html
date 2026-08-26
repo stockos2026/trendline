@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Μετοχές - trendline.gr</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.flash-new{
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  z-index:50;
+  padding:6px 10px;
+  border-radius:20px;
+  background:#ff1515;
+  color:white;
+  font-size:11px !important;
+  font-weight:900 !important;
+  line-height:1 !important;
+  box-shadow:0 3px 12px rgba(0,0,0,.45);
+  animation:flash .65s infinite;
+}
+
+@keyframes flash{
+  0%,100%{
+    opacity:1;
+    transform:scale(1)
+  }
+  50%{
+    opacity:.15;
+    transform:scale(1.12)
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="menu">
+  <a class="logo" href="Index.html">trendline.gr</a>
+
+  <nav>
+    <a href="Index.html#disclaimer">Αποποίηση Ευθύνης</a>
+    <a href="Index.html">Αρχική</a>
+    <a href="Index.html#contact">Επικοινωνία</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="shade"></div>
+
+<div class="hero-inner">
+
+<div
+  class="boxes"
+  id="reports"
+  style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+</div>
+
+<h1>ΜΕΤΟΧΕΣ</h1>
+
+</div>
+</section>
+
+</main>
+
+<script src="reports.js"></script>
+
+<script>
+loadReports("Stocks", "reports");
+</script>
+
+</body>
+</html>

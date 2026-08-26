@@ -1,0 +1,269 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#11152e;background:#f1f2f3}
+a{text-decoration:none;color:inherit}
+
+.menu{
+ position:fixed;top:18px;left:7%;right:7%;height:64px;z-index:10;
+ display:flex;align-items:center;justify-content:space-between;
+ padding:0 25px;border-radius:10px;background:rgba(9,14,43,.95);
+ box-shadow:0 8px 25px rgba(0,0,0,.22)
+}
+.logo{color:white;font-size:25px;font-weight:800}
+.menu nav{display:flex;gap:26px}
+.menu nav a{color:#5eb8ff;font-weight:700;font-size:18px}
+.menu nav a:hover{color:white}
+
+.hero{
+ min-height:720px;position:relative;overflow:hidden;
+ background:
+ linear-gradient(rgba(10,14,42,.28),rgba(10,14,42,.38)),
+ url("assets/background.png") center/cover no-repeat
+}
+.shade{position:absolute;inset:0;background:rgba(235,237,239,.10)}
+.hero-inner{position:relative;max-width:1100px;margin:auto;padding:150px 25px 65px;text-align:center}
+
+.hero h1{
+ margin:0 0 24px;
+ color:white;
+ font-size:clamp(32px,5vw,55px);
+ letter-spacing:-1px;
+ text-shadow:0 3px 18px rgba(0,0,0,.5)
+}
+
+.intro{
+ max-width:760px;
+ margin:0 auto 35px;
+ padding:20px 25px;
+ border-radius:10px;
+ background:rgba(8,12,40,.84);
+ color:white
+}
+
+.intro h2{margin:0 0 10px;font-size:18px}
+.intro p{margin:0;line-height:1.65;color:#e3e7f0}
+
+.boxes{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:18px;
+ max-width:950px;
+ margin:auto
+}
+
+.box{
+ position:relative;
+ padding:18px 12px;
+ border-radius:6px;
+ background:#d76520;
+ color:white;
+ box-shadow:0 8px 16px rgba(0,0,0,.18);
+ transition:.18s
+}
+
+.box:hover{
+ transform:translateY(-4px);
+ background:#e6772e
+}
+
+.box b{
+ display:block;
+ font-size:22px
+}
+
+.box span{
+ display:block;
+ margin-top:7px;
+ font-size:18px;
+ color:#ffe7d7
+}
+
+/* ΦΛΑΣΑΚΙ ΝΕΟ ΣΤΗΝ ΑΡΧΙΚΗ */
+.boxes .box:nth-child(3)::after,
+.boxes .box:nth-child(4)::after{
+ content:"ΝΕΟ";
+ position:absolute;
+ top:-14px;
+ right:-14px;
+ z-index:50;
+ padding:6px 10px;
+ border-radius:20px;
+ background:#ff1515;
+ color:white;
+ font-size:11px;
+ font-weight:900;
+ line-height:1;
+ box-shadow:0 3px 12px rgba(0,0,0,.45);
+ animation:flashNew .65s infinite
+}
+
+/* ΦΛΑΣΑΚΙ ΝΕΟ ΜΕΣΑ ΣΤΑ ΠΑΡΑΘΥΡΑ */
+.box .flash-new{
+ display:block;
+ position:absolute;
+ top:-14px;
+ right:-14px;
+ z-index:50;
+ width:auto;
+ margin:0;
+ padding:6px 10px;
+ border-radius:20px;
+ background:#ff1515;
+ color:white !important;
+ font-family:Arial,Helvetica,sans-serif;
+ font-size:11px !important;
+ font-weight:900 !important;
+ line-height:1 !important;
+ box-shadow:0 3px 12px rgba(0,0,0,.45);
+ animation:flashNew .65s infinite
+}
+
+@keyframes flashNew{
+ 0%,100%{
+   opacity:1;
+   transform:scale(1)
+ }
+ 50%{
+   opacity:.15;
+   transform:scale(1.12)
+ }
+}
+
+.category{
+ max-width:1100px;
+ margin:auto;
+ padding:65px 25px
+}
+
+.category h2,.simple-section h2{
+ text-align:center;
+ font-size:28px;
+ margin:0 0 25px;
+ color:#11152e
+}
+
+.dropzone{
+ min-height:145px;
+ border:2px dashed #c8cdd6;
+ border-radius:12px;
+ background:white;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ cursor:pointer;
+ transition:.2s;
+ text-align:center
+}
+
+.dropzone:hover,.dropzone.dragover{
+ border-color:#d76520;
+ background:#fff8f3
+}
+
+.dropzone strong{font-size:16px}
+
+.dropzone span{
+ font-size:12px;
+ color:#7b8491;
+ margin-top:8px
+}
+
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
+ margin-top:20px
+}
+
+.photo{
+ position:relative;
+ background:white;
+ border-radius:10px;
+ overflow:hidden;
+ box-shadow:0 4px 18px rgba(0,0,0,.08)
+}
+
+.photo img{
+ display:block;
+ width:100%;
+ height:auto
+}
+
+.delete{
+ position:absolute;
+ right:8px;
+ top:8px;
+ border:0;
+ border-radius:5px;
+ padding:6px 9px;
+ background:rgba(10,13,46,.85);
+ color:white;
+ cursor:pointer
+}
+
+.simple-section{
+ max-width:1100px;
+ margin:auto;
+ padding:60px 25px;
+ text-align:center
+}
+
+.simple-section p{
+ max-width:760px;
+ margin:auto;
+ line-height:1.7;
+ color:#606978
+}
+
+#disclaimer{
+ border-top:1px solid #d9dde4
+}
+
+footer{
+ background:#090d2b;
+ color:#aeb7cc;
+ text-align:center;
+ padding:25px;
+ font-size:12px
+}
+
+@media(max-width:800px){
+ .menu{
+  left:12px;
+  right:12px;
+  height:auto;
+  padding:14px 16px;
+  align-items:flex-start
+ }
+
+ .logo{font-size:14px}
+
+ .menu nav{
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:flex-end
+ }
+
+ .menu nav a{font-size:10px}
+
+ .hero-inner{padding-top:145px}
+
+ .boxes{
+  grid-template-columns:1fr 1fr
+ }
+
+ .gallery{
+  grid-template-columns:1fr 1fr
+ }
+}
+
+@media(max-width:500px){
+ .boxes,.gallery{
+  grid-template-columns:1fr
+ }
+
+ .hero h1{
+  font-size:32px
+ }
+}
